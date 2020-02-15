@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pdtimg:</strong>
+  <%= @craft.pdtImg %>
+</p>
+
+<p>
+  <strong>Pdtname:</strong>
+  <%= @craft.pdtName %>
+</p>
+
+<p>
+  <strong>Pdtcategory:</strong>
+  <%= @craft.pdtCategory %>
+</p>
+
+<p>
+  <strong>Pdtprice:</strong>
+  <%= @craft.pdtPrice %>
+</p>
+
+<%= link_to 'Edit', edit_craft_path(@craft) %> |
+<%= link_to 'Back', crafts_path %>
