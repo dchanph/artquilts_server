@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_15_075623) do
+ActiveRecord::Schema.define(version: 2020_02_18_131108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,16 @@ ActiveRecord::Schema.define(version: 2020_02_15_075623) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "craftkits", force: :cascade do |t|
+    t.bigint "craft_id", null: false
+    t.bigint "donatekit_id", null: false
+    t.integer "qty"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["craft_id"], name: "index_craftkits_on_craft_id"
+    t.index ["donatekit_id"], name: "index_craftkits_on_donatekit_id"
+  end
+
   create_table "crafts", force: :cascade do |t|
     t.string "pdtImg"
     t.string "pdtName"
@@ -45,5 +55,17 @@ ActiveRecord::Schema.define(version: 2020_02_15_075623) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "donatekits", force: :cascade do |t|
+    t.string "kitImg"
+    t.string "kitName"
+    t.string "kitCategory"
+    t.text "kitDetails"
+    t.integer "kitCost"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "craftkits", "crafts"
+  add_foreign_key "craftkits", "donatekits"
 end

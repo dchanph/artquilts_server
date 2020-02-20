@@ -1,0 +1,37 @@
+<%= form_with(model: craftkit, local: true) do |form| %>
+  <% if craftkit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(craftkit.errors.count, "error") %> prohibited this craftkit from being saved:</h2>
+
+      <ul>
+        <% craftkit.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :craft %>
+    <%= form.text_field :craft %>
+  </div>
+
+  <div class="field">
+    <%= form.label :references %>
+    <%= form.text_field :references %>
+  </div>
+
+  <div class="field">
+    <%= form.label :donatekit_id %>
+    <%= form.text_field :donatekit_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :qty %>
+    <%= form.number_field :qty %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

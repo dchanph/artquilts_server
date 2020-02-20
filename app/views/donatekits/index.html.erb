@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Donatekits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Kitimg</th>
+      <th>Kitname</th>
+      <th>Kitcategory</th>
+      <th>Kitdetails</th>
+      <th>Kitcost</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @donatekits.each do |donatekit| %>
+      <tr>
+        <td><%= donatekit.kitImg %></td>
+        <td><%= donatekit.kitName %></td>
+        <td><%= donatekit.kitCategory %></td>
+        <td><%= donatekit.kitDetails %></td>
+        <td><%= donatekit.kitCost %></td>
+        <td><%= link_to 'Show', donatekit %></td>
+        <td><%= link_to 'Edit', edit_donatekit_path(donatekit) %></td>
+        <td><%= link_to 'Destroy', donatekit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Donatekit', new_donatekit_path %>

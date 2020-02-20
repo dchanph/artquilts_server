@@ -1,0 +1,42 @@
+<%= form_with(model: donatekit, local: true) do |form| %>
+  <% if donatekit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(donatekit.errors.count, "error") %> prohibited this donatekit from being saved:</h2>
+
+      <ul>
+        <% donatekit.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :kitImg %>
+    <%= form.text_field :kitImg %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kitName %>
+    <%= form.text_field :kitName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kitCategory %>
+    <%= form.text_field :kitCategory %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kitDetails %>
+    <%= form.text_area :kitDetails %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kitCost %>
+    <%= form.number_field :kitCost %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

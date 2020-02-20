@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Craft:</strong>
+  <%= @craftkit.craft %>
+</p>
+
+<p>
+  <strong>References:</strong>
+  <%= @craftkit.references %>
+</p>
+
+<p>
+  <strong>Donatekit:</strong>
+  <%= @craftkit.donatekit_id %>
+</p>
+
+<p>
+  <strong>Qty:</strong>
+  <%= @craftkit.qty %>
+</p>
+
+<%= link_to 'Edit', edit_craftkit_path(@craftkit) %> |
+<%= link_to 'Back', craftkits_path %>

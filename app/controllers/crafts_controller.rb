@@ -5,11 +5,20 @@ class CraftsController < ApplicationController
   # GET /crafts.json
   def index
     @crafts = Craft.all
+
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @crafts.to_json(include: :donatekits) }
+    end
   end
 
   # GET /crafts/1
   # GET /crafts/1.json
   def show
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @craft.to_json(include: :donatekits) }
+    end
   end
 
   # GET /crafts/new

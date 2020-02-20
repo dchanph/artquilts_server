@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Kitimg:</strong>
+  <%= @donatekit.kitImg %>
+</p>
+
+<p>
+  <strong>Kitname:</strong>
+  <%= @donatekit.kitName %>
+</p>
+
+<p>
+  <strong>Kitcategory:</strong>
+  <%= @donatekit.kitCategory %>
+</p>
+
+<p>
+  <strong>Kitdetails:</strong>
+  <%= @donatekit.kitDetails %>
+</p>
+
+<p>
+  <strong>Kitcost:</strong>
+  <%= @donatekit.kitCost %>
+</p>
+
+<%= link_to 'Edit', edit_donatekit_path(@donatekit) %> |
+<%= link_to 'Back', donatekits_path %>
